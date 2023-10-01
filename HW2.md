@@ -1,7 +1,7 @@
 HW2
 ================
 Zhuodiao Kuang
-2023-09-30
+2023-10-01
 
 # Problem 1
 
@@ -85,3 +85,85 @@ $$=36e^{-6} \approx 0.089$$
 #### c) What is the probability of having more than 3 tornadoes in the United States next year?
 
 $$P(X>3) = 1-P(X \le 3) =1 - 61e^{-6} \approx 0.8488$$
+
+# Problem 3
+
+#### a) What is the probability that a randomly selected American male between 20 and 29 years old has a systolic blood pressure above 137.0?
+
+Let X denote the systolic blood pressure of 20-29 year old American
+males.
+
+$$X \sim N(128,(10.2)^2)$$
+
+$$z = \frac{x-\mu}{\sigma} = \frac{137.0-128.0}{10.2} = 0.8824$$
+$$P(X>137) = 1-\Phi(z)=0.1889$$
+
+#### b) What is the probability that the sample mean for blood pressure of 50 males between 20 and 29 years old will be less than 125.0?
+
+$$T = \bar{X} = (X_1+...+X_{50})/50$$ Because $X_i, i=1,...50$ are
+independent, $\bar{X}$ is still normally distributed.
+
+$$E(\bar{X}) = E(X) = 128$$ $$Var(\bar{X}) = \frac{Var(X)}{n} = 2.0808$$
+So, $\bar{X} \sim N(128,2.0808)$
+
+$$z = \frac{t-\mu}{\sigma} = \frac{125-128.0}{1.4425} = -2.08$$
+
+$$P(\bar{X}<125) = \Phi(z)=0.0188$$
+
+#### c) What is the 90th percentile of the sampling distribution of the sample mean X for a sample size of 40?
+
+$$Y = \bar{X} = (X_1+...+X_{40})/40$$ Because $X_i, i=1,...40$ are
+independent, $\bar{X}$ is still normally distributed.
+
+$$E(\bar{X}) = E(X) = 128$$ $$Var(\bar{X}) = \frac{Var(X)}{n} = 2.601$$
+So, $\bar{X} \sim N(128,2.601)$
+
+$$z_{0.9} = \frac{y-\mu}{\sigma} = \frac{y-128.0}{1.6128} = 1.2816$$
+
+$$y = 130.0669$$
+
+**Verify:**
+
+``` r
+qnorm(0.9,128,1.6128)
+```
+
+    ## [1] 130.0669
+
+This means that there is a 90% chance that the sample mean of 40
+randomly selected American males between 20 and 29 years old will be
+less than or equal to 130.0669 mm Hg.
+
+# Problem 4
+
+#### a) Compute the 95% confidence interval for the population mean pulse rate of young females suffering from fibromyalgia.
+
+Because we only know the sample standard deviation, so a 95% confidence
+interval for the population mean $\mu$ and unknown variance $\sigma^2$:
+
+$$\bar{X}-t_{n-1,0.975}\frac{s}{\sqrt{n}}\le\mu\le\bar{X}+t_{n-1,0.975}\frac{s}{\sqrt{n}}$$
+
+$$\bar{X}=80,s=10,n=40,t_{39,0.975}=2.021$$
+
+$$76.80452\le\mu\le83.19548$$
+
+#### b) Interpret the calculated confidence interval.
+
+I can be 95% confident that the interval covers the true value of the
+parameter.
+
+In another word, if we use the interval, \[76.80,83.20\], to contain the
+true population mean, for 100 times, we will make it for 95 times.
+
+#### c) Suppose the researchers now want to test the null hypothesis that the mean pulse of young women suffering from fibromyalgia is equal to 70, against the alternative that the mean pulse is not equal to 70, at the 𝛼 = 0.01 significance level. Conduct this hypothesis test, and interpret the results.
+
+$$H_0 : \mu=70 , H_1:  \mu \neq 70, \alpha = 0.01$$
+
+According to the research:
+
+$$\frac{\bar{X}-\mu}{s/\sqrt{n}}=6.3246$$
+
+$$\because t_{39,0.995} = 2.704<6.3246$$
+
+Therefore, $H_0$ is rejected. I cannot be 99% confident that the mean
+pulse of young women suffering from fibromyalgia is equal to 70.
