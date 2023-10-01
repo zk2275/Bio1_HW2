@@ -94,4 +94,54 @@ $$=36e^{-6} \approx 0.089$$
 
 $$P(X>3) = 1-P(X \le 3) =1 - 61e^{-6} \approx 0.8488$$
 
+# Problem 3
+
+
+
+#### a) What is the probability that a randomly selected American male between 20 and 29 years old has a systolic blood pressure above 137.0?
+
+Let X denote the systolic blood pressure of 20-29 year old American males. 
+
+$$X \sim N(128,(10.2)^2)$$
+
+$$z = \frac{x-\mu}{\sigma} = \frac{137.0-128.0}{10.2} = 0.8824$$
+$$P(X>137) = 1-\Phi(z)=0.1889$$
+
+#### b) What is the probability that the sample mean for blood pressure of 50 males between 20 and 29 years old will be less than 125.0?
+
+$$T = \bar{X} = (X_1+...+X_{50})/50$$
+Because $X_i, i=1,...50$ are independent, $\bar{X}$ is still normally distributed.
+
+$$E(\bar{X}) = E(X) = 128$$
+$$Var(\bar{X}) = \frac{Var(X)}{n} = 2.0808$$
+So, $\bar{X} \sim N(128,2.0808)$
+
+$$z = \frac{t-\mu}{\sigma} = \frac{125-128.0}{1.4425} = -2.08$$
+
+
+$$P(\bar{X}<125) = \Phi(z)=0.0188$$
+
+
+#### c) What is the 90th percentile of the sampling distribution of the sample mean X for a sample size of 40?
+
+
+
+$$Y = \bar{X} = (X_1+...+X_{40})/40$$
+Because $X_i, i=1,...40$ are independent, $\bar{X}$ is still normally distributed.
+
+$$E(\bar{X}) = E(X) = 128$$
+$$Var(\bar{X}) = \frac{Var(X)}{n} = 2.601$$
+So, $\bar{X} \sim N(128,2.601)$
+
+$$z_{0.9} = \frac{y-\mu}{\sigma} = \frac{y-128.0}{1.6128} = 1.2816$$
+
+$$y = 130.0669$$
+
+**Verify:**
+
+```{r}
+qnorm(0.9,128,1.6128)
+```
+
+This means that there is a 90% chance that the sample mean of 40 randomly selected American males between 20 and 29 years old will be less than or equal to 130.0669 mm Hg.
 
