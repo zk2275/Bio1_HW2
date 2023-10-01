@@ -174,8 +174,10 @@ That means when we use the interval(0<x<203.96) to cover the population mean pul
 
 #### c) Suppose the researchers now want to test the null hypothesis that the mean pulse of young women suffering from fibromyalgia is equal to 70, against the alternative that the mean pulse is not equal to 70, at the 𝛼 = 0.01 significance level. Conduct this hypothesis test, and interpret the results.
 
-```{r}
+$$H_0 : \bar{x}=70 , H_1:  \bar{x} \neq 70, \alpha = 0.01$$
 
-```
+According to the research:
+
+$$$$
 
 
