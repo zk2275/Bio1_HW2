@@ -145,3 +145,37 @@ qnorm(0.9,128,1.6128)
 
 This means that there is a 90% chance that the sample mean of 40 randomly selected American males between 20 and 29 years old will be less than or equal to 130.0669 mm Hg.
 
+
+# Problem 4
+
+#### a) Compute the 95% confidence interval for the population mean pulse rate of young females suffering from fibromyalgia.
+
+
+For the sample mean, $\bar{X} \sim N(80,100)$.
+So, for the population mean,  $X \sim N(80,4000)$.
+
+$$z_{0.025} \le \frac{x-\mu}{\sigma} \le z_{0.975}$$
+
+$$z_{0.025}\sigma+\mu \le x \le z_{0.975}\sigma+\mu,z_{0.025}=-z_{0.975}=-1.96$$
+
+$$-43.96\le x \le 203.96$$
+Accoring to the actual situation: 
+$$0< x \le 203.96$$
+
+
+
+#### b) Interpret the calculated confidence interval.
+
+
+Because it's the confidence interval for the population, so it's much wider than the sample mean's confidence interval. 
+
+That means when we use the interval(0<x<203.96) to cover the population mean pulse rate of young females suffering from fibromyalgia for 100 times, there are always 95 times to make it.
+
+
+#### c) Suppose the researchers now want to test the null hypothesis that the mean pulse of young women suffering from fibromyalgia is equal to 70, against the alternative that the mean pulse is not equal to 70, at the 𝛼 = 0.01 significance level. Conduct this hypothesis test, and interpret the results.
+
+```{r}
+
+```
+
+
